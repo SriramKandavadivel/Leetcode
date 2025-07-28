@@ -4,7 +4,14 @@ class Solution:
         next_sm = [n] * n
         prev_sme = [-1]* n
         """
-        
+        ### in one loop and one stack
+        prev small equal and next small 
+        or
+        prev small and next small equal
+
+        prev greater equal and next greater
+        or
+        prev greater and next greater equal
         
         """
         st1 = []
