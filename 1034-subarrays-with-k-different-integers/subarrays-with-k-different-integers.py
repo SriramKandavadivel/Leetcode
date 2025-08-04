@@ -1,40 +1,26 @@
 class Solution:
     def subarraysWithKDistinct(self, nums: List[int], k: int) -> int:
         n= len(nums)
-        d = collections.defaultdict(lambda : 0)
-        l = 0
-        r = 0
-        tot = 0
-        while r < n:
-            d[nums[r]] += 1
-            while l <= r and len(d) > k:
-                
+        def rec(x):
+            d = collections.defaultdict(lambda : 0)
+            l = 0
+            r = 0
+            cnt = 0
+            while l < n:
+                while r < n and len(d) < x:
+                    d[nums[r]] += 1
+                    r += 1
+                    print(l,r)
+                if len(d) >= x:
+                    cnt += n - r+1
                 d[nums[l]] -= 1
                 if d[nums[l]] == 0:
                     del d[nums[l]]
                 l += 1
-            tot += (r-l+1)
-            r += 1
-        atmostk = tot
-        r = 0
-        l = 0
-        val = 0
-        d = collections.defaultdict(lambda : 0)
-        while r < n:
-            d[nums[r]] += 1
-            while l <= r and len(d) > k-1:
-                d[nums[l]] -= 1
-                if d[nums[l]]== 0:
-                    del d[nums[l]]
-                l += 1
-                
-            val += (r-l+1)
-            r += 1 
-             
-        atmostk1 = val
-            
-        print(atmostk,atmostk1)
-        return abs(atmostk - atmostk1)
+            # print(cnt)
+            return cnt
+        
+        return rec(k)-rec(k+1)
 
 """
 ##atmost - while r < n:
@@ -42,6 +28,7 @@ class Solution:
             while tot > k:
                 tot -= l
                 l+=1
+            ans = r-l+1
             r+=1
 ##atleast  - while l < n:
                 while r < n and tot < k:
