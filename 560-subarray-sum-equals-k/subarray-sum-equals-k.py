@@ -1,7 +1,7 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        d={0:1}
         tot = 0
+        d = {0:1}
         cnt = 0
         for i,val in enumerate(nums):
             tot += val
