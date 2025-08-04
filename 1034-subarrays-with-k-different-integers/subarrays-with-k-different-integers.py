@@ -35,3 +35,18 @@ class Solution:
             
         print(atmostk,atmostk1)
         return abs(atmostk - atmostk1)
+
+"""
+##atmost - while r < n:
+            tot += nums[r]
+            while tot > k:
+                tot -= l
+                l+=1
+            r+=1
+##atleast  - while l < n:
+                while r < n and tot < k:
+                    tot += nums[r]
+                    r+=1
+                tot -= nums[l]
+                l += 1
+"""
