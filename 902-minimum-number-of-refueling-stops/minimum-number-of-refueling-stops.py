@@ -14,7 +14,7 @@ class Solution:
         i = 0
         while fuel < target:
             while i < n and stations[i][0] <= fuel:
-                push(-stations[i][1])
+                push(-stations[i][1])    ##max heap so we use -ve
                 i += 1
             if not h:
                 return -1
