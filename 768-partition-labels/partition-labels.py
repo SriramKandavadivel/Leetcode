@@ -14,10 +14,10 @@ class Solution:
         # print(l)
         ans = []
         while l:
-            if len(l) > 1 and l[1][0] <= l[0][1] <= l[1][1]:
+            if l[-1] != l[0] and l[1][0] <= l[0][1] <= l[1][1]:
                 l[1][0] = l[0][0]
                 l.popleft()
-            elif len(l) > 1 and l[1][0] <= l[0][1] and l[1][1] <= l[0][1]:
+            elif l[-1] != l[0] and l[1][0] <= l[0][1] and l[1][1] <= l[0][1]:
                 l[1] = l[0]
                 l.popleft()
             else:
