@@ -1,6 +1,7 @@
 class Solution:
     def corpFlightBookings(self, bookings: List[List[int]], n: int) -> List[int]:
         '''
+        sweep line
         1        2        3         4         5  -->index
 
         10               -10
