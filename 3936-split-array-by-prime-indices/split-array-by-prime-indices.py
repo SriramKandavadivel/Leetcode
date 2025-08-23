@@ -9,8 +9,8 @@ class Solution:
         isPrime[1] = False
 
         for i in range(N):
-            if isPrime[i]:
-                for j in range(i+i,N,i):
+            if isPrime[i]:   
+                for j in range(i+i,N,i):   ### runtime = nlog(n) bcoz loop incrmts i times for evry i
                     isPrime[j] = False
         sum1 = 0
         sum2 = 0    
