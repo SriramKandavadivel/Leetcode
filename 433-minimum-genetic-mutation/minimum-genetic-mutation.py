@@ -1,6 +1,7 @@
 class Solution:
     def minMutation(self, startGene: str, endGene: str, bank: List[str]) -> int:
         n = len(bank)
+        ans = 0
         vis = set()
         # q = deque([startGene])
         q = []
