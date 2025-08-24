@@ -15,8 +15,8 @@ class Solution:
             if i < n and j < m and word1[i] == word2[j]:
                 cnt = min(cnt,rec(i+1,j+1))
             if i < n and j < m and word1[i] != word2[j]:
-                cnt = min(cnt, 1+rec(i+1,j+1))
-                cnt = min(cnt, 1+rec(i+1,j))
-                cnt = min(cnt, 1+rec(i,j+1))
+                cnt = min(cnt, 1+rec(i+1,j+1))  # replace word1[i] with word2[j]
+                cnt = min(cnt, 1+rec(i+1,j))    #delete word1[i]
+                cnt = min(cnt, 1+rec(i,j+1))    #insert word2[j] at word1[i]
             return cnt
         return rec(0,0)
