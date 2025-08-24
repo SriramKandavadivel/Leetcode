@@ -1,7 +1,6 @@
 class Solution:
     def minMutation(self, startGene: str, endGene: str, bank: List[str]) -> int:
         n = len(bank)
-        ans = 0
         vis = set()
         # q = deque([startGene])
         q = []
@@ -10,8 +9,8 @@ class Solution:
         def pop():
             return heapq.heappop(q)
         push([0,startGene])
+
         while q:
-            
             m = len(q)
             while m > 0:
                 ans = pop()
