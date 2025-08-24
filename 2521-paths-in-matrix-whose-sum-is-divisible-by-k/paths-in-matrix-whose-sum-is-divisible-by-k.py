@@ -2,24 +2,24 @@ class Solution:
     def numberOfPaths(self, grid: List[List[int]], k: int) -> int:
         MOD = 10**9+7
         m,n = len(grid),len(grid[0])
-        @cache
-        def rec(i,j,s):
-            # if i >= m or j >= n:
-            #     return 0
-            if i == m-1 and j == n-1:
-                val = grid[i][j] 
-                s += val
-                if s % k == 0:
-                    return 1
-                return 0
-            cnt = 0
-            val = grid[i][j] 
-            # s %= k
-            if i+1 < m:
-                cnt += (rec(i+1,j,(s+val)%k)) 
-            if j+1 < n:
-                cnt += (rec(i,j+1,(s+val)%k)) 
-            return cnt % MOD
+        # @cache          ------> correct but memory limit exceede
+        # def rec(i,j,s):
+        #     # if i >= m or j >= n:
+        #     #     return 0
+        #     if i == m-1 and j == n-1:
+        #         val = grid[i][j] 
+        #         s += val
+        #         if s % k == 0:
+        #             return 1
+        #         return 0
+        #     cnt = 0
+        #     val = grid[i][j] 
+        #     # s %= k
+        #     if i+1 < m:
+        #         cnt += (rec(i+1,j,(s+val)%k)) 
+        #     if j+1 < n:
+        #         cnt += (rec(i,j+1,(s+val)%k)) 
+        #     return cnt % MOD
         # return rec(0,0,0)
     
     
