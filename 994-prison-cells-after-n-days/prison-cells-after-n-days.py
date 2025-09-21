@@ -10,9 +10,9 @@ class Solution:
                 c[i] = 0
         # print(c)
         cells = list(c)
-        n = (n-1)%14
+        n = (n-1)%14##instead of printing and counting ,convert it into tuple and add in set,cnt the size
         for i in range(n):
-            for j in range(1,7):                  #[0,0,1,0,1,0,1,0]
+            for j in range(1,7):             
                 if cells[j-1] == cells[j+1]:
                     c[j] = 1
                 else:
