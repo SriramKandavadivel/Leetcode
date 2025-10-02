@@ -2,8 +2,8 @@ class Solution:
     def fairCandySwap(self, aliceSizes: List[int], bobSizes: List[int]) -> List[int]:
         c_a = sum(aliceSizes)
         c_b = sum(bobSizes)
-        aliceSizes.sort()
-        bobSizes.sort()
+        # aliceSizes.sort()
+        # bobSizes.sort()
         A = set(aliceSizes)
         B = set(bobSizes)
 
