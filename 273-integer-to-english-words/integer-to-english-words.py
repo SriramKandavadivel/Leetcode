@@ -5,7 +5,7 @@ class Solution:
 
         def words(n):
             if n < 20:
-                return to_19[n-1:n]
+                return to_19[n-1:n]  #for 0 the list reverses and gives 19, so n-1:n
             if n < 100:
                 return [tens[n//10 -2]] + words(n%10)
             if n < 1000:
