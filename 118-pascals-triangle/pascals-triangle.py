@@ -2,8 +2,8 @@ class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
 
         def rec(rows):
-            # if rows == 0:
-            #     return []
+            if rows == 0:
+                return []
             if rows == 1:
                 return [[1]]
             
